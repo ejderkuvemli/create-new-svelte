@@ -58,7 +58,7 @@ cd my-app
 and run:
 
 ```sh 
-npm start
+npm run dev
 ```
 
 After starting the application you can browse to [http://localhost:5000](http://localhost:5000) to view your new app in the browser.
