@@ -1,12 +1,15 @@
 {
   "name": "create-new-svelte",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Create a new svelte App",
+  "engines": {
+    "node": ">=10"
+  },
   "bin": {
-    "create-new-svelte": "./index.js"
+    "create-new-svelte": "index.js"
   },
   "scripts": {
-    "test": "echo 'test'"
+    "test": "cross-env FORCE_COLOR=true"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,8 @@
   "homepage": "https://github.com/ejderkuvemli/create-new-svelte#readme",
   "dependencies": {
     "fs-extra": "^9.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
