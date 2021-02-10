@@ -1,6 +1,6 @@
 {
   "name": "create-new-svelte",
-  "version": "0.1.1",
+  "version": "0.1.11",
   "description": "Create a new svelte App",
   "engines": {
     "node": ">=10"

@@ -15,6 +15,7 @@ packageJson.version = '0.1.0';
 
 fs.ensureDirSync(appName);
 fs.copySync(templateFolder, appName);
+fs.rename(path.join(appName, 'gitignore'), path.join(appName, '.gitignore'));
 fs.writeFileSync(
     path.join(root, 'package.json'),
     JSON.stringify(packageJson, null, 2) + os.EOL
