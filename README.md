@@ -1,6 +1,6 @@
 # Create New Svelte
 
-Create a new Svelte app easily.
+Create a new Svelte app easily. You can either select `default` (javascript) or `typescript` as a project template.
 
 ## Installing the package
 
@@ -16,6 +16,18 @@ After installing `create-new-svelte`, following methods will help you to create 
 ```sh
 create-new-svelte my-app
 ```
+### FULL USAGE
+
+```sh
+create-new-svelte <project-name> [options]
+
+options:
+
+  -V, --version                      output the version number
+  -t, --template <project-template>  specify a project template for the project (choices: "default", "typescript", "ts", default: "default")
+  -h, --help                         display help for command
+```
+
 
 ### npx (requires `npm` 5.2+)
 
@@ -29,7 +41,7 @@ npx create-new-svelte my-app
 npm init new-svelte my-app
 ```
 
-## Folder structure
+## Folder structure for `default` (javascript template)
 
 ```sh
 my-app
@@ -38,8 +50,6 @@ my-app
 ├── package.json
 ├── .gitignore
 ├── rollup.config.js
-├── scripts
-│   └── setupTypeScript.js
 ├── public
 │   ├── favicon.png
 │   ├── global.css
@@ -47,6 +57,25 @@ my-app
 └── src
     ├── App.svelte
     └── main.js
+```
+
+## Folder structure for `typescript` or `ts` (typescript template)
+
+```sh
+my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── rollup.config.js
+├── tsconfig.json
+├── public
+│   ├── favicon.png
+│   ├── global.css
+│   └── index.html
+└── src
+    ├── App.svelte
+    └── main.ts
 ```
 
 After creating the app you can go to the application directory:
