@@ -1,6 +1,6 @@
-# Create Svelte App
+# Create New Svelte
 
-Create Svelte Apps easily. <img alt="Logo" align="right" src="https://svelte.dev/svelte-logo-horizontal.svg"  />
+Create a new Svelte app easily. <img alt="Logo" align="right" src="https://svelte.dev/svelte-logo-horizontal.svg" width="20%" />
 
 ## Installing the package
 
