@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ejderkuvemli/create-new-svelte/issues"
   },
-  "homepage": "https://github.com/ejderkuvemli/create-new-svelte#readme"
+  "homepage": "https://github.com/ejderkuvemli/create-new-svelte#readme",
+  "dependencies": {
+    "fs-extra": "^9.1.0"
+  }
 }
