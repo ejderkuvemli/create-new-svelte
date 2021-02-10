@@ -1,10 +1,9 @@
 {
   "name": "create-new-svelte",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create a new svelte App",
-  "main": "index.js",
   "bin": {
-    "create-new-svelte": "index.js"
+    "create-new-svelte": "./index.js"
   },
   "scripts": {
     "test": "echo 'test'"
