@@ -1,0 +1,22 @@
+{
+  "name": "create-new-svelte",
+  "version": "0.0.1",
+  "description": "Create a new svelte App",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejderkuvemli/create-new-svelte.git"
+  },
+  "keywords": [
+    "svelte"
+  ],
+  "author": "Ejder Kuvemli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ejderkuvemli/create-new-svelte/issues"
+  },
+  "homepage": "https://github.com/ejderkuvemli/create-new-svelte#readme"
+}
