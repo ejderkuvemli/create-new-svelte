@@ -14,7 +14,6 @@ function TypescriptTranspiler(app) {
             .replace(/export let name;/gm, 'export let name: string;');
 
         app.fh.wpf(`/src/App.svelte`, appSvelte);
-        app.fh.cf('/index.html', `/public/index.html`);
     }
 
     this.exportConfig = function () {
