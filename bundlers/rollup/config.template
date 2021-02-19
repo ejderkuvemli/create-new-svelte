@@ -1,0 +1,18 @@
+${imports}
+
+${variables}
+
+${functions}
+
+export default {
+    input: ${entry},
+    output: {
+        sourcemap: true,
+        format: 'iife',
+        name: 'app',
+        file: 'public/build/bundle.js'
+    }${plugins},
+    watch: {
+        clearScreen: false
+    }
+};

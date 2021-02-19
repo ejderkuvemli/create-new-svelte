@@ -1,6 +1,6 @@
 # Create New Svelte
 
-Create a new Svelte app easily. You can either select `default` (javascript) or `typescript` as a project template.
+Create a new Svelte app easily. Supports `rollup` and `webpack` bundlers with `typescript` or `javascript`.
 
 ## Installing the package
 
@@ -23,9 +23,11 @@ create-new-svelte <project-name> [options]
 
 options:
 
-  -V, --version                      output the version number
-  -t, --template <project-template>  specify a project template for the project (choices: "default", "typescript", "ts", default: "default")
-  -h, --help                         display help for command
+  -V, --version                  output the version number
+  -t, --transpiler <transpiler>  specify a transpiler (choices: "none", "typescript", "ts", default: "none (javascript)")
+  -b, --bundler <bundler-type>   specify the bundler (choices: "rollup", "webpack", default: "rollup")
+  --no-install                   create the app only, no package installation
+  -h, --help                     display help for command
 ```
 
 
@@ -49,7 +51,7 @@ my-app
 ├── node_modules
 ├── package.json
 ├── .gitignore
-├── rollup.config.js
+├── rollup.config.js (webpack.config.js for `webpack` bundler)
 ├── public
 │   ├── favicon.png
 │   ├── global.css
@@ -67,7 +69,7 @@ my-app
 ├── node_modules
 ├── package.json
 ├── .gitignore
-├── rollup.config.js
+├── rollup.config.js (webpack.config.js for `webpack` bundler)
 ├── tsconfig.json
 ├── public
 │   ├── favicon.png

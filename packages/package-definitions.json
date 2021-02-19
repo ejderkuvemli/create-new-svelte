@@ -1,0 +1,23 @@
+[
+    { "n": "rollup", "v": "2.3.4"},
+    { "n": "@rollup/plugin-commonjs", "v": "17.0.0", "i": "commonjs"},
+    { "n": "rollup-plugin-css-only", "v": "3.1.0", "i": "css"},
+    { "n": "@rollup/plugin-node-resolve", "v": "11.0.0", "i": "resolve"},
+    { "n": "rollup-plugin-livereload", "v": "2.0.0", "i": "livereload"},
+    { "n": "rollup-plugin-terser", "v": "7.0.0", "i": ["terser"]},
+    { "n": "@rollup/plugin-typescript", "v": "6.0.0", "i": "typescript"},
+    { "n": "rollup-plugin-svelte", "v": "7.0.0", "i": "svelte"},
+    { "n": "svelte-preprocess", "v": "4.6.9", "i": "sveltePreprocess"},
+    { "n": "svelte", "v": "3.32.3"},
+    { "n": "@tsconfig/svelte", "v": "1.0.0"},
+    { "n": "sirv-cli", "v": "1.0.0"},
+    { "n": "rimraf", "v": "2.7.1"},
+    { "n": "typescript", "v": "4.1.5"},
+    { "n": "webpack", "v": "5.22.0"},
+    { "n": "webpack-cli", "v": "4.5.0"},
+    { "n": "webpack-dev-server", "v": "3.11.2"},
+    { "n": "svelte-loader", "v": "3.0.0"},
+    { "n": "ts-loader", "v": "8.0.17"},
+    { "n": "mini-css-extract-plugin", "v": "1.3.8", "i": "MiniCssExtractPlugin"},
+    { "n": "css-loader", "v": "5.0.2"}
+]
