@@ -1,6 +1,14 @@
 # Create New Svelte
 
-Create a new Svelte app easily. Supports `rollup` and `webpack` bundlers with `typescript` or `javascript`.
+Create a new [Svelte](https://svelte.dev/) app easily. 
+
+Supported Bundlers:
+
+[Rollup](https://rollupjs.org/) | [Webpack](https://webpack.js.org/)
+
+Languages / Transpilers:
+
+[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | [TypeScript](https://www.typescriptlang.org/) | [CoffeeScript](https://coffeescript.org/)
 
 ## Installing the package
 
@@ -24,7 +32,7 @@ create-new-svelte <project-name> [options]
 options:
 
   -V, --version                  output the version number
-  -t, --transpiler <transpiler>  specify a transpiler (choices: "none", "typescript", "ts", default: "none (javascript)")
+  -t, --transpiler <transpiler>  specify a transpiler (choices: "none", "typescript", "ts", "coffeescript", "cs", default: "none (javascript)")
   -b, --bundler <bundler-type>   specify the bundler (choices: "rollup", "webpack", default: "rollup")
   --no-install                   create the app only, no package installation
   -h, --help                     display help for command
@@ -78,6 +86,24 @@ my-app
 └── src
     ├── App.svelte
     └── main.ts
+```
+
+## Folder structure for `coffeescript` or `cs` (coffeescript template)
+
+```sh
+my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── rollup.config.js (webpack.config.js for `webpack` bundler)
+├── public
+│   ├── favicon.png
+│   ├── global.css
+│   └── index.html
+└── src
+    ├── App.svelte
+    └── main.coffee
 ```
 
 After creating the app you can go to the application directory:

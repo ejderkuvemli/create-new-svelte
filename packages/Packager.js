@@ -18,9 +18,9 @@ Packager.prototype = {
     },
     // Add dependency
     ad: function (name, version, isDev) {
-        let pkg = allPackages.find(p=> p.n === name);
-        if (!pkg)  {
-           return null;
+        let pkg = allPackages.find(p => p.n === name);
+        if (!pkg) {
+            return null;
         }
         version = version ? version : pkg.v;
         let section = isDev ? 'devDependencies' : 'dependencies';
@@ -35,8 +35,8 @@ Packager.prototype = {
     // Add script
     s: function _s(key, value, pkgs) {
         this.packageJson.scripts[key] = value;
-        if (pkgs){
-            pkgs.map(pkg=> this.add(pkg));
+        if (pkgs) {
+            pkgs.map(pkg => this.add(pkg));
         }
     }
 }

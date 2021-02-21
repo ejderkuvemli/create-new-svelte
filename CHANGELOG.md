@@ -2,6 +2,17 @@
 
 `create-new-svelte` changes
 
+## [0.2.0] - 2020-02-21
+
+### Added
+
+- [Handlebars](https://handlebarsjs.com/) support for templates
+- `CoffeScript` support
+
+### Fixed
+
+- Webpack - TypeScript export had issues.
+
 ## [0.1.3] - 2020-02-20
 
 ### Added

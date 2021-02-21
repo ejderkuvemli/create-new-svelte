@@ -20,38 +20,21 @@ function serve() {
 }
 
 //  plugins
-function sveltePlugin() {
-    svelte({
-        compilerOptions: {
-            // enable run-time checks when not in production
-            dev: !production
-        }
-    })
-}
+const sveltePlugin = () => (
+    svelte({options})
+)
 
-sveltePlugin.prototype.imports = ['rollup-plugin-svelte'];
+sveltePlugin.imports = ['rollup-plugin-svelte'];
 
-function sveltePluginWithPreprocess() {
-    svelte({
-        preprocess: sveltePreprocess({ sourceMap: !production }),
-        compilerOptions: {
-            // enable run-time checks when not in production
-            dev: !production
-        }
-    })
-}
-
-sveltePluginWithPreprocess.prototype.imports = ['rollup-plugin-svelte', 'svelte-preprocess'];
-
-function cssPlugin() {
+const cssPlugin = () => (
     // we'll extract any component CSS out into
     // a separate file - better for performance
     css({ output: 'bundle.css' })
-}
+)
 
-cssPlugin.prototype.imports = ['rollup-plugin-css-only'];
+cssPlugin.imports = ['rollup-plugin-css-only'];
 
-function resolvePlugin() {
+const resolvePlugin = () => (
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
@@ -62,61 +45,68 @@ function resolvePlugin() {
         browser: true,
         dedupe: ['svelte']
     })
-}
+)
 
-resolvePlugin.prototype.imports = ['@rollup/plugin-node-resolve']
+resolvePlugin.imports = ['@rollup/plugin-node-resolve']
 
-function commonjsPlugin() {
+const commonjsPlugin = () => (
     commonjs()
-}
+)
 
-commonjsPlugin.prototype.imports = ['@rollup/plugin-commonjs']
+commonjsPlugin.imports = ['@rollup/plugin-commonjs']
 
-function typescriptPlugin() {
+const typescriptPlugin = () => (
     typescript({
-        sourceMap: !production,
-        inlineSources: !production
+        sourceMap: !prod,
+        inlineSources: !prod
     })
-}
+)
 
-typescriptPlugin.prototype = { imports: ['@rollup/plugin-typescript'], requires: ['typescript', '@tsconfig/svelte'] }
+typescriptPlugin.imports = ['@rollup/plugin-typescript'];
+typescriptPlugin.requires =  ['typescript', '@tsconfig/svelte'];
 
-function servePlugin() {
+const servePlugin = () => (
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated
-    !production && serve()
-}
+    !prod && serve()
+)
 
-servePlugin.prototype.needs = [serve]
+servePlugin.needs = [serve]
 
-function livereloadPlugin() {
+const livereloadPlugin = () => (
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
-    !production && livereload('public')
-}
+    !prod && livereload('public')
+)
 
-livereloadPlugin.prototype.imports = ['rollup-plugin-livereload'];
+livereloadPlugin.imports = ['rollup-plugin-livereload'];
 
-function terserPlugin() {
+const terserPlugin = () => (
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
-    production && terser()
-}
+    prod && terser()
+)
 
-terserPlugin.prototype.imports = ['rollup-plugin-terser'];
+terserPlugin.imports = ['rollup-plugin-terser'];
 
+const coffeeScriptPlugin = () => (
+    coffee({sourceMap: true})
+)
+
+coffeeScriptPlugin.imports = ['rollup-plugin-coffee-script'];
+coffeeScriptPlugin.requires =  ['coffeescript'];
 
 module.exports = {
     serve,
     sveltePlugin,
-    sveltePluginWithPreprocess,
     cssPlugin,
     resolvePlugin,
     commonjsPlugin,
     typescriptPlugin,
+    coffeeScriptPlugin,
     servePlugin,
     livereloadPlugin,
     terserPlugin

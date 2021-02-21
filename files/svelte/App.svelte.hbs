@@ -1,5 +1,13 @@
-<script>
+<script{{#if lang}} lang="{{lang}}"{{/if}}>
+{{#if js}}
 	export let name;
+{{/if}}
+{{#if ts}}
+	export let name: string;
+{{/if}}
+{{#if cs}}
+	export name = null
+{{/if}}
 </script>
 
 <main>

@@ -1,0 +1,24 @@
+(env, options) => (
+prod = options.mode === 'production',
+{
+  entry: {{entry}},
+  output: {
+    path: path.resolve(__dirname, 'public'),
+    filename: 'build/bundle.js'
+  },
+  module: {
+    {{#if rules}}
+    rules: [
+        {{#each rules}}{{this}}{{#unless @last}},{{/unless}}{{/each}}
+    ],{{/if}}
+  },
+  resolve: {
+    {{#if extensions}}
+    extensions: [
+        {{#each extensions}}'{{this}}'{{#unless @last}}, {{/unless}}{{/each}}
+    ]{{/if}}
+  }{{#if plugins}},
+  plugins: [
+      {{#each plugins}}{{this}}{{#unless @last}},{{/unless}}{{/each}}
+  ]{{/if}}
+});

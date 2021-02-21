@@ -1,10 +1,14 @@
 const Transpiler = require("../Transpiler");
+const Handlebars = require('handlebars');
 
-function NoTranspiler(app){
+function NoTranspiler(app) {
     Transpiler.call(this, app);
 
-    app.bundler.transpiler('none');
-
+    this.modifyFiles = function () {
+        let appSvelte = app.fh.rtf('App.svelte.hbs');
+        appSvelte = Handlebars.compile(appSvelte)({ js: true });
+        app.fh.wpf(`/src/App.svelte`, appSvelte);
+    }
 }
 
 module.exports = NoTranspiler;

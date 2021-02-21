@@ -11,6 +11,11 @@ FileHelper.prototype = {
     rf: function (filePath){
         return fs.readFileSync(filePath, 'utf8');
     },
+    // Read template files
+    rtf: function (filePath){
+        const rSrcDir = path.join(__dirname, this.copySourceRoot);
+        return this.rf(`${rSrcDir}/${filePath}`);
+    },
     // Read project file
     rpf: function (filePath){
         return this.rf(`${this.copyDestRoot}${filePath}`);
@@ -21,7 +26,7 @@ FileHelper.prototype = {
     },
     // Write project file
     wpf: function (filePath, content) {
-        this.wf(`${this.copyDestRoot}${filePath}`, content);
+        this.wf(`${this.copyDestRoot}/${filePath}`, content);
     },
     // Copy file
     cf: function (src, dst) {

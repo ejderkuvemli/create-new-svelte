@@ -18,7 +18,7 @@ function createNewSvelte() {
             }
             appName = name;
         })
-        .addOption(new Option('-t, --transpiler <transpiler>', 'specify a transpiler').default('none').choices(['none', 'typescript', 'ts']))
+        .addOption(new Option('-t, --transpiler <transpiler>', 'specify a transpiler').default('none').choices(['none', 'typescript', 'ts', 'coffeescript', 'cs']))
         .addOption(new Option('-b, --bundler <bundler-type>', 'specify the bundler').default('rollup').choices(['rollup', 'webpack']))
         .addOption(new Option('--no-install', 'create the app only, no package installation'))
         .allowUnknownOption()
@@ -26,6 +26,16 @@ function createNewSvelte() {
 
     const options = program.opts();
     options.name = appName;
+    switch (options.transpiler) {
+        case 'typescript':
+        case 'ts':
+            options.transpiler = 'typescript';
+            break;
+        case 'coffeescript':
+        case 'cs':
+            options.transpiler = 'coffeescript';
+            break;
+    }
     const app = new SvelteApplication(options);
     app.create();
     if (options.install)

@@ -6,6 +6,7 @@
     { "n": "rollup-plugin-livereload", "v": "2.0.0", "i": "livereload"},
     { "n": "rollup-plugin-terser", "v": "7.0.0", "i": ["terser"]},
     { "n": "@rollup/plugin-typescript", "v": "6.0.0", "i": "typescript"},
+    { "n": "rollup-plugin-coffee-script", "v": "2.0.0", "i": "coffee"},
     { "n": "rollup-plugin-svelte", "v": "7.0.0", "i": "svelte"},
     { "n": "svelte-preprocess", "v": "4.6.9", "i": "sveltePreprocess"},
     { "n": "svelte", "v": "3.32.3"},
@@ -13,11 +14,16 @@
     { "n": "sirv-cli", "v": "1.0.0"},
     { "n": "rimraf", "v": "2.7.1"},
     { "n": "typescript", "v": "4.1.5"},
+    { "n": "coffeescript", "v": "2.5.1"},
     { "n": "webpack", "v": "5.22.0"},
     { "n": "webpack-cli", "v": "4.5.0"},
     { "n": "webpack-dev-server", "v": "3.11.2"},
     { "n": "svelte-loader", "v": "3.0.0"},
     { "n": "ts-loader", "v": "8.0.17"},
+    { "n": "coffee-loader", "v": "2.0.0"},
     { "n": "mini-css-extract-plugin", "v": "1.3.8", "i": "MiniCssExtractPlugin"},
-    { "n": "css-loader", "v": "5.0.2"}
+    { "n": "css-loader", "v": "5.0.2"},
+    { "n": "clean-webpack-plugin", "v": "3.0.0", "i": ["CleanWebpackPlugin"]}
+    
+    
 ]

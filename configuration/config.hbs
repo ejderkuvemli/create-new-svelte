@@ -1,0 +1,19 @@
+{{#if imports}}
+{{#each imports}}
+{{this}}
+{{/each}}
+
+{{/if}}
+{{#if variables}}
+{{#each variables}}
+{{this}}
+{{/each}}
+
+{{/if}}
+{{#if functions}}
+{{#each functions}}
+{{this}}
+{{/each}}
+
+{{/if}}
+{{exportType}} {{> exports}}

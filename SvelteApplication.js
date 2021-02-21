@@ -2,18 +2,15 @@ const path = require('path');
 
 const FileHelper = require('./files/helper');
 const Packager = require('./packages/Packager');
-const BundlerFactory = require('./bundlers/BundlerFactory');
-const TranspilerFactory = require('./transpilers/TranspilerFactory');
 
 function SvelteApplication(opts) {
 
     this.appTemplate = {
         filesRoot: './svelte',
         filesToCopy: [
-            { src: '/index.html', dst: `/public/index.html` },
+            { src: '/index.html.hbs', dst: `/public/index.html` },
             { src: '/favicon.png', dst: `/public/favicon.png` },
             { src: '/global.css', dst: `/public/global.css` },
-            { src: '/App.svelte', dst: `/src/App.svelte` },
             { src: '/main.js', dst: `/src/main.js` },
             { src: '/gitignore', dst: `/.gitignore` }
         ]
@@ -23,10 +20,11 @@ function SvelteApplication(opts) {
     this.dir = path.resolve(this.o.name);
     this.fh = new FileHelper(this.appTemplate.filesRoot, this.dir);
     this.packager = new Packager(this);
-    this.bundler = new BundlerFactory(this).create();
-    this.transpiler = new TranspilerFactory(this).create();
+    const Bundler = require(`./bundlers/${this.o.bundler}`);
+    this.bundler = new Bundler(this);
+    const Transpiler = require(`./transpilers/${this.o.transpiler}`);
+    this.transpiler = new Transpiler(this)
     this.appTemplate.filesToCopy.map(file => { this.fh.cf(file.src, file.dst); });
-
     this.create = function () {
         this.fh.cd(this.dir);
         this.packager.export();
