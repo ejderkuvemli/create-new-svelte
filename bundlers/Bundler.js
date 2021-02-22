@@ -8,6 +8,7 @@ function Bundler(app) {
     this.transpiler = new IntegratedTranspiler(this);
 
     this.templateRoot = path.join(__dirname, `/${app.o.bundler}`);
+    this.modifyFiles = ()=> {}
 }
 
 module.exports = Bundler;

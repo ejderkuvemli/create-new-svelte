@@ -5,9 +5,8 @@ function NoTranspiler(app) {
     Transpiler.call(this, app);
 
     this.modifyFiles = function () {
-        let appSvelte = app.fh.rtf('App.svelte.hbs');
-        appSvelte = Handlebars.compile(appSvelte)({ js: true });
-        app.fh.wpf(`/src/App.svelte`, appSvelte);
+        app.fh.etf('main.js.hbs', { const_app: 'const app' }, '/src/main.js');
+        app.fh.etf('App.svelte.hbs', { js: true });
     }
 }
 

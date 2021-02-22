@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
+const Handlebars = require('handlebars');
 
 function FileHelper(srcRoot, dstRoot) {
     this.copySourceRoot = srcRoot;
@@ -26,6 +27,7 @@ FileHelper.prototype = {
     },
     // Write project file
     wpf: function (filePath, content) {
+        filePath = filePath.replace(/^\/\//, '/');
         this.wf(`${this.copyDestRoot}/${filePath}`, content);
     },
     // Copy file
@@ -40,6 +42,13 @@ FileHelper.prototype = {
     // Rename file
     rn: function(oldPath, newPath) {
         fs.renameSync(`${this.copyDestRoot}${oldPath}`, `${this.copyDestRoot}${newPath}`);
+    },
+    // Export compiled file (filePath is for a template file)
+    etf: function(filePath, options, dst) {
+        let template = this.rtf(filePath);
+        template = Handlebars.compile(template)(options);
+        let saveTo = dst ? dst : this.fileMap.find(t=> t.src == filePath).dst;
+        this.wpf(saveTo, template);
     }
 }
 

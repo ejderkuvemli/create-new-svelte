@@ -1,4 +1,3 @@
-const path = require('path');
 const Bundler = require('../Bundler');
 const plugins = require('./plugins.js');
 
@@ -18,7 +17,7 @@ function WebpackBundler(app) {
     this.s('clean', 'rimraf public/build/', ['rimraf']);
     this.s('build-dev', 'webpack --mode development', ['webpack', 'webpack-cli', 'webpack-dev-server']);
     this.s('build-prod', 'webpack --mode production', ['webpack', 'webpack-cli', 'webpack-dev-server']);
-    this.s('dev', 'webpack serve --content-base public --mode development', ['webpack', 'webpack-cli', 'webpack-dev-server']);
+    this.s('dev', 'webpack serve --content-base public --mode development --port 5000', ['webpack', 'webpack-cli', 'webpack-dev-server']);
 
     this.v('prod');
 
@@ -27,6 +26,11 @@ function WebpackBundler(app) {
     this.config.extensions.push('.mjs', '.js', '.svelte');
 
     this.transpiler.init();
+
+    this.modifyFiles = () => {
+        app.fh.etf('index.html.hbs', { bundleSrc: '/build/bundle.js' });
+    }
+
 }
 
 module.exports = WebpackBundler;

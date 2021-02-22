@@ -6,11 +6,8 @@ function TypescriptTranspiler(app) {
     Transpiler.call(this, app);
 
     this.modifyFiles = function () {
-        app.fh.rn(`/src/main.js`, `/src/main.ts`);
-
-        let appSvelte = app.fh.rtf('App.svelte.hbs');
-        appSvelte = Handlebars.compile(appSvelte)({ lang: 'ts', ts: true });
-        app.fh.wpf(`/src/App.svelte`, appSvelte);
+        app.fh.etf('main.js.hbs', { const_app: 'const app' }, '/src/main.ts');
+        app.fh.etf('App.svelte.hbs', { lang: 'ts', ts: true });
     }
 
     this.exportConfig = function () {

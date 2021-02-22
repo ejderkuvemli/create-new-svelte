@@ -4,7 +4,7 @@ Create a new [Svelte](https://svelte.dev/) app easily.
 
 Supported Bundlers:
 
-[Rollup](https://rollupjs.org/) | [Webpack](https://webpack.js.org/)
+[Rollup](https://rollupjs.org/) | [Webpack](https://webpack.js.org/) | [Snowpack](https://www.snowpack.dev/)
 
 Languages / Transpilers:
 
@@ -33,7 +33,7 @@ options:
 
   -V, --version                  output the version number
   -t, --transpiler <transpiler>  specify a transpiler (choices: "none", "typescript", "ts", "coffeescript", "cs", default: "none (javascript)")
-  -b, --bundler <bundler-type>   specify the bundler (choices: "rollup", "webpack", default: "rollup")
+  -b, --bundler <bundler-type>   specify the bundler (choices: "rollup", "webpack", "snowpack", default: "rollup")
   --no-install                   create the app only, no package installation
   -h, --help                     display help for command
 ```

@@ -1,0 +1,9 @@
+{
+  mount: {
+      public: '/',
+      src: '/build'
+  }{{#if plugins}},
+  plugins: [
+      {{#each plugins}}{{this}}{{#unless @last}},{{/unless}}{{/each}}
+  ]{{/if}}
+};

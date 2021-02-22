@@ -2,6 +2,12 @@
 
 `create-new-svelte` changes
 
+## [0.2.1] - 2020-02-21
+
+### Added
+
+- `Snowpack` support
+
 ## [0.2.0] - 2020-02-21
 
 ### Added

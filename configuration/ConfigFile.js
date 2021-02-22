@@ -28,7 +28,7 @@ function ConfigFile(app) {
     this.setPlugin = function (plugin, options, imports) {
         plugin = this.getFunc(plugin);
         if (options) {
-            plugin.body = plugin.body.replace(/\{options\}/g, options.toString().match(/(\{)([^]*)\}/g)[0]);
+            plugin.body = plugin.body.replace(/\{\s*options\s*\}/g, options.toString().match(/(\{)([^]*)\}/g)[0]);
         }
         if (imports) {
             imports.map(imp => this.i(imp));

@@ -23,7 +23,10 @@
     { "n": "coffee-loader", "v": "2.0.0"},
     { "n": "mini-css-extract-plugin", "v": "1.3.8", "i": "MiniCssExtractPlugin"},
     { "n": "css-loader", "v": "5.0.2"},
-    { "n": "clean-webpack-plugin", "v": "3.0.0", "i": ["CleanWebpackPlugin"]}
-    
+    { "n": "clean-webpack-plugin", "v": "3.0.0", "i": ["CleanWebpackPlugin"]},
+    { "n": "snowpack", "v": "3.0.11"},
+    { "n": "@snowpack/plugin-svelte", "v": "3.5.2"},
+    { "n": "@snowpack/plugin-webpack", "v": "2.3.0"},
+    { "n": "@snowpack/plugin-typescript", "v": "1.2.1"}
     
 ]

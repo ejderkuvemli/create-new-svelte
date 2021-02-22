@@ -1,4 +1,3 @@
-
 const Bundler = require('../Bundler');
 const plugins = require('./plugins');
 
@@ -10,7 +9,7 @@ function RollupBundler(app) {
     this.s('clean', 'rimraf public/build', ['rimraf']);
     this.s('build', 'rollup -c', ['rollup']);
     this.s('dev', 'rollup -c -w', ['rollup']);
-    this.s('start', 'sirv public', ['sirv-cli']);
+    this.s('start', 'sirv public --port 5000', ['sirv-cli']);
 
     this.p(plugins.cssPlugin);
     this.p(plugins.resolvePlugin);
@@ -20,6 +19,11 @@ function RollupBundler(app) {
     this.p(plugins.terserPlugin);
 
     this.transpiler.init();
+
+    this.modifyFiles = () => {
+        app.fh.etf('index.html.hbs', { bundleSrc: '/build/bundle.js', bundleCss: true });
+    }
+
 }
 
 module.exports = RollupBundler;
