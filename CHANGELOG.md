@@ -2,7 +2,7 @@
 
 `create-new-svelte` changes
 
-## [0.3.0] - 2020-02-21
+## [0.3.0] - 2020-02-23
 
 ### Added
 

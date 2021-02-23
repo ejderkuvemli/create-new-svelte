@@ -2,7 +2,7 @@
 
 Create a new [Svelte](https://svelte.dev/) app easily. 
 
-Supported Bundlers:
+Supported Build Tools:
 
 [Rollup](https://rollupjs.org/) | [Webpack](https://webpack.js.org/) | [Snowpack](https://www.snowpack.dev/) | [Parcel](https://parceljs.org/)
 
