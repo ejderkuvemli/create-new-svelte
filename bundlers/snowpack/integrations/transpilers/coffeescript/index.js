@@ -8,9 +8,11 @@ function CoffeeScriptTranspiler(bundler) {
             },
             emitCss: prod,
             hotReload: !prod,
-            preprocess: sveltePreprocess()
+            preprocess: sveltePreprocess({ sourceMap: false })
         }), ['svelte-preprocess']);
         bundler.app.packager.add('coffeescript');
+        bundler.p(plugins.coffeeScriptPlugin);
+
     }
 }
 

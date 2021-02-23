@@ -4,7 +4,9 @@ const plugins = require('./plugins');
 function RollupBundler(app) {
     Bundler.call(this, app);
 
-    this.v('prod', `!process.env.ROLLUP_WATCH`);
+    this.v('prod', ()=> (
+        !process.env.ROLLUP_WATCH
+        ));
 
     this.s('clean', 'rimraf public/build', ['rimraf']);
     this.s('build', 'rollup -c', ['rollup']);

@@ -2,6 +2,16 @@
 
 `create-new-svelte` changes
 
+## [0.3.0] - 2020-02-21
+
+### Added
+
+- `parcel` support
+
+### Fixed
+
+- Snowpack with CoffeeScript integration has been fixed.
+
 ## [0.2.1] - 2020-02-21
 
 ### Added

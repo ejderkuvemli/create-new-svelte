@@ -24,7 +24,7 @@ Packager.prototype = {
         }
         version = version ? version : pkg.v;
         let section = isDev ? 'devDependencies' : 'dependencies';
-        this.packageJson[section][name] = '^' + version;
+        this.packageJson[section][name] = version;
         return pkg.i;
     },
     // Add devDependency   

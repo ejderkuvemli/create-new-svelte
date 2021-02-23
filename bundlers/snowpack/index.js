@@ -5,11 +5,6 @@ function SnowpackBundler(app) {
 
     Bundler.call(this, app);
 
-    this.r = function (rule, options, imports) {
-        rule = this.setPlugin(rule, options, imports);
-        this.config.rules.push(rule.body);
-    }
-
     this.type = 'node';
 
     this.in('path');
@@ -18,8 +13,12 @@ function SnowpackBundler(app) {
     this.s('dev', 'snowpack dev --port 5000', ['snowpack']);
     this.s('build', 'snowpack build', ['snowpack']);
 
-    this.v('mode', `process.env.NODE_ENV || 'development'`);
-    this.v('prod', `mode === 'production'`);
+    this.v('mode', () => (
+        process.env.NODE_ENV || 'development'
+    ));
+    this.v('prod', () => (
+        mode === 'production'
+    ));
 
     this.transpiler.init();
 

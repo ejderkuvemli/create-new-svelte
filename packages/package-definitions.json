@@ -1,13 +1,13 @@
 [
-    { "n": "rollup", "v": "2.3.4"},
-    { "n": "@rollup/plugin-commonjs", "v": "17.0.0", "i": "commonjs"},
+    { "n": "rollup", "v": "2.39.1"},
+    { "n": "@rollup/plugin-commonjs", "v": "17.1.0", "i": "commonjs"},
     { "n": "rollup-plugin-css-only", "v": "3.1.0", "i": "css"},
-    { "n": "@rollup/plugin-node-resolve", "v": "11.0.0", "i": "resolve"},
+    { "n": "@rollup/plugin-node-resolve", "v": "11.2.0", "i": "resolve"},
     { "n": "rollup-plugin-livereload", "v": "2.0.0", "i": "livereload"},
-    { "n": "rollup-plugin-terser", "v": "7.0.0", "i": ["terser"]},
-    { "n": "@rollup/plugin-typescript", "v": "6.0.0", "i": "typescript"},
+    { "n": "rollup-plugin-terser", "v": "7.0.2", "i": ["terser"]},
+    { "n": "@rollup/plugin-typescript", "v": "8.2.0", "i": "typescript"},
     { "n": "rollup-plugin-coffee-script", "v": "2.0.0", "i": "coffee"},
-    { "n": "rollup-plugin-svelte", "v": "7.0.0", "i": "svelte"},
+    { "n": "rollup-plugin-svelte", "v": "7.1.0", "i": "svelte"},
     { "n": "svelte-preprocess", "v": "4.6.9", "i": "sveltePreprocess"},
     { "n": "svelte", "v": "3.32.3"},
     { "n": "@tsconfig/svelte", "v": "1.0.0"},
@@ -27,6 +27,10 @@
     { "n": "snowpack", "v": "3.0.11"},
     { "n": "@snowpack/plugin-svelte", "v": "3.5.2"},
     { "n": "@snowpack/plugin-webpack", "v": "2.3.0"},
-    { "n": "@snowpack/plugin-typescript", "v": "1.2.1"}
+    { "n": "@snowpack/plugin-typescript", "v": "1.2.1"},
+    { "n": "@snowpack/plugin-run-script", "v": "2.3.0"},
+    { "n": "npm-run-all", "v": "4.1.5"},
+    { "n": "parcel-bundler", "v": "1.12.4"},
+    { "n": "parcel-plugin-svelte", "v": "4.0.8"}
     
 ]

@@ -19,7 +19,7 @@ function createNewSvelte() {
             appName = name;
         })
         .addOption(new Option('-t, --transpiler <transpiler>', 'specify a transpiler').default('none').choices(['none', 'typescript', 'ts', 'coffeescript', 'cs']))
-        .addOption(new Option('-b, --bundler <bundler-type>', 'specify the bundler').default('rollup').choices(['rollup', 'webpack', 'snowpack']))
+        .addOption(new Option('-b, --bundler <bundler-type>', 'specify the bundler').default('rollup').choices(['rollup', 'webpack', 'parcel', 'snowpack']))
         .addOption(new Option('--no-install', 'create the app only, no package installation'))
         .allowUnknownOption()
         .parse(process.argv);

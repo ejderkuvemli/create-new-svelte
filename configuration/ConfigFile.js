@@ -57,10 +57,11 @@ function ConfigFile(app) {
         this.i(pkg, pkg, false);
     }
 
-    this.v = function (key, value) {
+    this.v = function (key, value, options, imports) {
         let template;
         if (value) {
-            template = `const ${key} = ${value};`;
+            value =  this.setPlugin(value);
+            template = `const ${key} = ${value.body};`;
         } else {
             template = `let ${key};`
         }
@@ -83,14 +84,17 @@ function ConfigFile(app) {
     }
 
     this.export = function () {
-        const configSource = fs.readFileSync(path.join(__dirname, `./config.hbs`), 'utf8');
-        const exportsSource = fs.readFileSync(`${this.templateRoot}/exports.hbs`, 'utf8');
-        Handlebars.registerPartial("exports", exportsSource);
-        const configTemplate = Handlebars.compile(configSource, { preventIndent: true, noEscape: true });
-        this.config.exportType = this.type === 'node' ? 'module.exports =' : 'export default';
-        let configOutput = configTemplate(this.config);
-        configOutput = beautify(configOutput);
-        this.app.fh.wpf(this.fileName, configOutput);
+        if (this.mustExport) {
+            const configSource = fs.readFileSync(path.join(__dirname, `./config.hbs`), 'utf8');
+            const exportsSource = fs.readFileSync(`${this.templateRoot}/exports.hbs`, 'utf8');
+            Handlebars.registerPartial("exports", exportsSource);
+            const configTemplate = Handlebars.compile(configSource, {  noEscape: true });
+            this.config.exportType = this.type === 'node' ? 'module.exports =' : 'export default';
+            let configOutput = configTemplate(this.config);
+            configOutput = beautify(configOutput);
+            this.app.fh.wpf(this.fileName, configOutput);
+        }
+
     }
 }
 
